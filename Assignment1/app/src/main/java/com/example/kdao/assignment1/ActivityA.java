@@ -9,12 +9,18 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+
 public class ActivityA extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_a);
+        setContentView(R.layout.activity_a);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -48,5 +54,20 @@ public class ActivityA extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void startDialog(View v) {
+        Intent intent = new Intent(ActivityA.this, DialogActivity.class);
+        startActivity(intent);
+    }
+
+    public void startActivityB(View v) {
+        Intent intent = new Intent(ActivityA.this, ActivityB.class);
+        startActivity(intent);
+    }
+
+
+    public void finishActivityA(View v) {
+        ActivityA.this.finish();
     }
 }
