@@ -64,6 +64,53 @@
             android:onClick="startDialog"
             />
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="30dp">
+        <TextView
+            android:id="@+id/threads_count_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/thread_count"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_medium"/>
+        <TextView
+            android:id="@+id/threads_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/threads_count_label"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_medium"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="30dp">
+        <TextView
+            android:id="@+id/bundle_count_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bundle_count"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_medium"/>
+        <TextView
+            android:id="@+id/bundles_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bundle_count_label"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_medium"/>
+    </RelativeLayout>
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dip"

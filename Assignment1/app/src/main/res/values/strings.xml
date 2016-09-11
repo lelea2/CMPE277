@@ -20,4 +20,7 @@
     <string name="btn_finish_dialog_label">Close</string>
     <string name="close">Close</string>
     <string name="dialog">Dialog</string>
+
+    <string name="thread_count">Threads Count:</string>
+    <string name="bundle_count">Bundles Count:</string>
 </resources>
