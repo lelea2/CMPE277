@@ -135,7 +135,6 @@
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
         android:textColor="@color/white"
-        android:onClick="closeApp"
-        />
+        android:onClick="closeApp" />
 </LinearLayout>
 
