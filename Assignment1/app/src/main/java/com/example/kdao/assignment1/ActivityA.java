@@ -19,6 +19,8 @@ public class ActivityA extends AppCompatActivity {
 
     private TextView threadCount;
     private TextView bundleCount;
+    private int thread_numb;
+    private int bundle_numb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,31 @@ public class ActivityA extends AppCompatActivity {
 //                        .setAction("Action", null).show();
 //            }
 //        });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     public void startDialog(View v) {

@@ -16,13 +16,41 @@ public class ActivityB extends AppCompatActivity {
         setContentView(R.layout.activity_b);
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     public void startDialog(View v) {
         Intent intent = new Intent(ActivityB.this, DialogActivity.class);
         startActivity(intent);
     }
 
+    //Finish B will navigate the app back to activity A
     public void finishB(View v) {
-
+        Intent intent = new Intent(ActivityB.this, ActivityA.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //Finish current activity
+        startActivity(intent);
     }
 
 }
