@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Assigment2</string>
+    <string name="app_name">CMPE277_Assignment2</string>
+    <string name="title">Implicit Intents</string>
+    <string name="btn_close_app">Close App</string>
+    <string name="btn_launch">Launch</string>
+    <string name="btn_ring">Ring</string>
+    <string name="url">URL:</string>
+    <string name="phone">Phone:</string>
+    <string name="url_hint">Enter URL</string>
+    <string name="phone_hint">(xxx) xxx-xxxx</string>
+    <string name="default_url">https://www.yahoo.com/</string>
 </resources>
