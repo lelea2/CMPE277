@@ -41,6 +41,9 @@ public class ActivityA extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        System.out.println(">>> on resume <<<");
+        thread_numb = thread_numb + 1;
+        threadCount.setText(String.format("%05d", thread_numb));
         super.onResume();
     }
 
