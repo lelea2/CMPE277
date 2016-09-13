@@ -19,26 +19,19 @@ public class ActivityA extends AppCompatActivity {
 
     private TextView threadCount;
     private TextView bundleCount;
-    private int thread_numb;
-    private int bundle_numb;
+    private int thread_numb = 0;
+    private int bundle_numb = 0;
+    private static final String BUNDLE_COUNT = "bundle_count";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println(savedInstanceState);
+        if (savedInstanceState != null) {
+        }
         setContentView(R.layout.activity_a);
         threadCount = (TextView)findViewById(R.id.threads_count);
         bundleCount = (TextView)findViewById(R.id.bundles_count);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
 
     @Override
@@ -65,6 +58,28 @@ public class ActivityA extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        System.out.println("on saved instance");
+        bundle_numb++;
+        savedInstanceState.putInt(BUNDLE_COUNT, bundle_numb);
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can restore the view hierarchy
+        System.out.println("on restore instance");
+        super.onRestoreInstanceState(savedInstanceState);
+        System.out.println(savedInstanceState);
+        if (savedInstanceState != null) {
+            int bundle_numb_count = savedInstanceState.getInt(BUNDLE_COUNT);
+            bundleCount.setText(bundle_numb_count);
+            bundle_numb++;
+        }
+    }
+
 
     public void startDialog(View v) {
         Intent intent = new Intent(ActivityA.this, DialogActivity.class);
