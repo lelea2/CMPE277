@@ -3,4 +3,4 @@ Thumbs.db
 
 ../build/
 ../.gradle/
-
+*.zip
