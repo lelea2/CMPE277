@@ -7,12 +7,14 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Window;
 
 public class ActivityB extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_b);
     }
 
@@ -41,15 +43,10 @@ public class ActivityB extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void startDialog(View v) {
-        Intent intent = new Intent(ActivityB.this, DialogActivity.class);
-        startActivity(intent);
-    }
-
     //Finish B will navigate the app back to activity A
     public void finishB(View v) {
         Intent intent = new Intent(ActivityB.this, ActivityA.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //Finish current activity
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //Finish current activity
         startActivity(intent);
     }
 
