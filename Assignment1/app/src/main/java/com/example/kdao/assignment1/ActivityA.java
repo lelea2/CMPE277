@@ -83,7 +83,7 @@ public class ActivityA extends AppCompatActivity {
         System.out.println(savedInstanceState);
         if (savedInstanceState != null) {
             int bundle_numb_count = savedInstanceState.getInt(BUNDLE_COUNT);
-            bundleCount.setText(bundle_numb_count);
+            bundleCount.setText(String.format("%05d", bundle_numb_count));
             bundle_numb++;
         }
     }
