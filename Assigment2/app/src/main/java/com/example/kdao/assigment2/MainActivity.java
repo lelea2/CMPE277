@@ -31,13 +31,16 @@ public class MainActivity extends AppCompatActivity {
         //phone_number.addTextChangedListener(new PhoneNumberFormattingTextWatcher()); //mask phone number
         phone_number.addTextChangedListener(new TextWatcher() {
             int length_before = 0;
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 length_before = s.length();
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 if (length_before < s.length()) {
@@ -91,9 +94,14 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         String tel = "tel:" + phone_string.replaceAll("[^0-9|\\+]", "");
-        Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+        Intent phoneIntent = new Intent(Intent.ACTION_CALL);
+        //Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
         phoneIntent.setData(Uri.parse(tel));
-        startActivity(phoneIntent);
+        try {
+            startActivity(phoneIntent);
+        } catch(Exception ex) {//android.content.ActivityNotFoundException ex) {
+            Toast.makeText(getApplicationContext(),"Cannot execute the call",Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void closeApp(View v) {
