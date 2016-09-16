@@ -102,8 +102,8 @@
             android:padding="15dp"
             android:hint="@string/phone_hint"
             android:inputType="phone"
-            android:digits="0123456789+"
             android:background="@color/white"
+            android:maxLength="12"
             android:layout_toRightOf="@id/phone_label" />
         <Button
             android:layout_width="150dp"

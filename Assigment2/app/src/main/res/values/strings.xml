@@ -8,5 +8,5 @@
     <string name="phone">Phone:</string>
     <string name="url_hint">Enter URL</string>
     <string name="phone_hint">(xxx) xxx-xxxx</string>
-    <string name="default_url">https://www.yahoo.com/</string>
+    <string name="default_url">http://www.sjsu.edu/</string>
 </resources>
