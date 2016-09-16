@@ -45,9 +45,10 @@ public class ActivityB extends AppCompatActivity {
 
     //Finish B will navigate the app back to activity A
     public void finishB(View v) {
-        Intent intent = new Intent(ActivityB.this, ActivityA.class);
-        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //Finish current activity
-        startActivity(intent);
+//        Intent intent = new Intent(ActivityB.this, ActivityA.class);
+//        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); //Finish current activity
+//        startActivity(intent);
+        ActivityB.this.finish();
     }
 
 }
