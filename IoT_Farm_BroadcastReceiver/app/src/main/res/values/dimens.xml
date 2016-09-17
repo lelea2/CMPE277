@@ -5,5 +5,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="font_large">30dp</dimen>
     <dimen name="font_medium">20dp</dimen>
-    <dimen name="font_small">10dp</dimen>
+    <dimen name="font_small">15dp</dimen>
 </resources>
