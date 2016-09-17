@@ -6,7 +6,7 @@
     <string name="temperature_label">Temperature (F)</string>
     <string name="humidity_label">Humidity (%)</string>
     <string name="set_button">Set</string>
-    <string name="cancel_button">Set</string>
+    <string name="cancel_button">Cancel</string>
     <string name="turn_fan">TURN Fan</string>
     <string name="turn_fan_sprinkler">TURN Fan & Sprinkler</string>
     <string name="fan_on">Fan ON</string>
