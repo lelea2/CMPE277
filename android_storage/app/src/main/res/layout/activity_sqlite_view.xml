@@ -59,6 +59,8 @@
             android:layout_toRightOf="@id/desc"
             android:hint="@string/hint_250"
             android:inputType="textMultiLine"
+            android:textSize="@dimen/font_small"
+            android:textColor="@color/dark_black"
             android:lines="10"
             android:minLines="8"
             android:gravity="top|left"

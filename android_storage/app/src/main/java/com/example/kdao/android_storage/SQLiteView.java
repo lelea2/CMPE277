@@ -1,24 +1,75 @@
 package com.example.kdao.android_storage;
 
+import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.preference.PreferenceManager;
+import android.content.Context;
 
 public class SQLiteView extends AppCompatActivity {
 
     private EditText desc;
+    private int counter = 0;
+    private SimpleDateFormat s = new SimpleDateFormat("MM/dd/yyyy-hh:mm a");
+    private static final String SQL_COUNTER = "SQL_COUNTER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sqlite_view);
         desc = (EditText) findViewById(R.id.desc_text);
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        counter = sharedPrefs.getInt(SQL_COUNTER, 0);
     }
 
-    public void saveSQLite(View v) {
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        counter = sharedPrefs.getInt(SQL_COUNTER, 0);
+    }
 
+    /**
+     * Helper function to save SQLite
+     * @param v
+     */
+    public void saveSQLite(View v) {
+        String blog_message = desc.getText().toString();
+        if (blog_message != null) {
+            StorageController dataController = new StorageController(getBaseContext());
+            dataController.open();
+            long retValue = dataController.insert(blog_message);
+            dataController.close();
+            if (retValue != -1) {
+                Toast.makeText(getApplicationContext(), "Message saved successfully",Toast.LENGTH_LONG).show();
+                try {
+                    counter += 1;
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                    Editor editor = sharedPreferences.edit();
+                    editor.putInt(SQL_COUNTER, counter);
+                    editor.commit();
+                    OutputStreamWriter out = new OutputStreamWriter(openFileOutput(PreferenceView.STORE_PREFERENCES, MODE_APPEND));
+                    out.write("\nSQLite " + counter + ", " + s.format(new Date()));
+                    out.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(getApplicationContext(), "Please enter valid info.",Toast.LENGTH_LONG).show();
+            return;
+        }
     }
 
     public void cancelActivity(View v) {

@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:id="@+id/temp_layout"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         >
         <TextView
             android:id="@+id/book_name"
@@ -48,16 +48,18 @@
             android:textColor="@color/white"
             android:textSize="@dimen/font_small"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:textAlignment="viewEnd"/>
         <EditText
             android:id="@+id/book_name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="280dp"
-            android:padding="10dp"
+            android:padding="3dp"
             android:background="@color/white"
             android:hint="@string/hint_70"
+            android:textSize="@dimen/font_small"
+            android:textColor="@color/dark_black"
             android:layout_toRightOf="@id/book_name" />
     </RelativeLayout>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -75,15 +77,17 @@
             android:textColor="@color/white"
             android:textSize="@dimen/font_small"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:textAlignment="viewEnd"/>
         <EditText
             android:id="@+id/author_name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="280dp"
-            android:padding="10dp"
+            android:padding="3dp"
             android:background="@color/white"
+            android:textSize="@dimen/font_small"
+            android:textColor="@color/dark_black"
             android:hint="@string/hint_70"
             android:layout_toRightOf="@id/author_name" />
     </RelativeLayout>
@@ -118,6 +122,8 @@
             android:minLines="6"
             android:gravity="top|left"
             android:maxLines="20"
+            android:textSize="@dimen/font_small"
+            android:textColor="@color/dark_black"
             android:scrollbars="vertical" />
     </RelativeLayout>
     <TableLayout
