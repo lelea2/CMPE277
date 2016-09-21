@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">android_storage</string>
+    <string name="title">Android Data Storage Sample</string>
+    <string name="preference_title">Preference Storage View</string>
+    <string name="sqlite_title">SQLite View</string>
+    <string name="preference_btn">Preference</string>
+    <string name="sqlite_btn">SQLite</string>
+    <string name="save_btn">Save</string>
+    <string name="cancle_btn">Cancel</string>
+    <string name="close_btn">Close</string>
+    <string name="name_label">Android Book Name</string>
+    <string name="author_label">Android Author Name</string>
+    <string name="desc_label">Description</string>
+    <string name="blog_msg_label">Blog Message</string>
+    <string name="hint_70">Max. 70 Characters</string>
+    <string name="hint_250">Max. 250 Characters Only</string>
 </resources>

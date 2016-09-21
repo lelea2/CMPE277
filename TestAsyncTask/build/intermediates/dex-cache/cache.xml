@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/ShrutiVuppalapati/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Hanumayamma/CiscoAnalytics/BooksAndReferences/CMPE277-03/Android/TestAsyncTask/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0-190e38235880052a8b04c42ae0ea3b2eb004d655.jar" />
+    </item>
+
+</items>
