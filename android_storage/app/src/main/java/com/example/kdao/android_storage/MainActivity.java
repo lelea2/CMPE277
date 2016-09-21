@@ -36,9 +36,13 @@ public class MainActivity extends AppCompatActivity {
                 }
                 in.close();
                 info.setText(buf.toString());
+                info.setVisibility(View.VISIBLE);
+            } else {
+                info.setVisibility(View.INVISIBLE);
             }
         } catch(Exception e) {
             e.printStackTrace();
+            info.setVisibility(View.INVISIBLE);
         }
     }
 

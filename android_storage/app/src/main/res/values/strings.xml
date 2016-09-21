@@ -12,6 +12,6 @@
     <string name="author_label">Android Author Name</string>
     <string name="desc_label">Description</string>
     <string name="blog_msg_label">Blog Message</string>
-    <string name="hint_70">Max. 70 Characters</string>
-    <string name="hint_250">Max. 250 Characters Only</string>
+    <string name="hint70">Max. 70 Characters</string>
+    <string name="hint250">Max. 250 Characters Only</string>
 </resources>

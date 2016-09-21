@@ -57,7 +57,8 @@
             android:minWidth="280dp"
             android:padding="3dp"
             android:background="@color/white"
-            android:hint="@string/hint_70"
+            android:hint="@string/hint70"
+            android:maxLength="70"
             android:textSize="@dimen/font_small"
             android:textColor="@color/dark_black"
             android:layout_toRightOf="@id/book_name" />
@@ -88,7 +89,8 @@
             android:background="@color/white"
             android:textSize="@dimen/font_small"
             android:textColor="@color/dark_black"
-            android:hint="@string/hint_70"
+            android:hint="@string/hint70"
+            android:maxLength="70"
             android:layout_toRightOf="@id/author_name" />
     </RelativeLayout>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -116,7 +118,8 @@
             android:padding="10dp"
             android:background="@color/white"
             android:layout_toRightOf="@id/desc"
-            android:hint="@string/hint_250"
+            android:hint="@string/hint250"
+            android:maxLength="250"
             android:inputType="textMultiLine"
             android:lines="8"
             android:minLines="6"
