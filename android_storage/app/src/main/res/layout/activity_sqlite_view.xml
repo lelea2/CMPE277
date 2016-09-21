@@ -82,7 +82,7 @@
                 android:layout_weight="1"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
-                android:onClick="savePreference"
+                android:onClick="saveSQLite"
                 android:text="@string/save_btn"
                 android:textColor="@color/black"
                 android:textAllCaps="false"
