@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="com.example.kdao.iot_farm_broadcastreceiver.FarmManager">
+
+    <TextView android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/farm_manager"
+        android:textSize="@dimen/font_large"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:text="@string/title"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/font_large"
+        android:textAllCaps="false"
+        android:padding="20dp" />
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+        <LinearLayout android:layout_width="0dp" android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_small"
+                android:textColor="@color/white"
+                android:text="@string/cond_1"
+                android:textAlignment="center" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="@color/red"
+                android:text="@string/turn_fan"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textSize="@dimen/font_medium"
+                android:textAllCaps="false"
+                android:padding="20dp"
+                android:onClick="turnFanOn" />
+        </LinearLayout>
+        <View
+            android:layout_width="3dp"
+            android:layout_height="fill_parent"
+            android:background="#fff" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="fill_parent"
+            android:layout_weight="1" android:orientation="vertical" android:padding="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_small"
+                android:textColor="@color/white"
+                android:text="@string/cond_2"
+                android:textAlignment="center" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="@color/purple"
+                android:text="@string/turn_fan_sprinkler"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textSize="@dimen/font_medium"
+                android:textAllCaps="false"
+                android:padding="20dp"
+                android:onClick="turnFanSprinklerOn" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

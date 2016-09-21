@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">IOT_BroadcastReceiver_Setter</string>
+    <string name="farm_manager">Farm Manager</string>
+    <string name="title">Temperature & Humidity</string>
+    <string name="turn_fan">TURN Fan</string>
+    <string name="turn_fan_sprinkler">TURN Fan & Sprinkler</string>
+    <string name="fan_on">Fan ON</string>
+    <string name="sprinkler_on">Sprinkler ON</string>
+    <string name="cond_1">Temperature(F) > 70 & Temperature(F) < 90</string>
+    <string name="cond_2">Temperature(F) > 90 & Temperature(F) < 125</string>
+</resources>

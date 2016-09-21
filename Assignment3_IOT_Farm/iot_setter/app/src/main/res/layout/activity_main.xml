@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="@dimen/activity_horizontal_margin"
+    tools:context="com.example.kdao.iot_farm_broadcastreceiver.MainActivity">
+    <TextView android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textSize="@dimen/font_large"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/temp_layout"
+        android:layout_above="@id/header"
+        android:layout_marginTop="40dp">
+        <TextView
+            android:id="@+id/tem_label"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/temperature_label"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_medium"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="viewEnd" />
+        <EditText
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="280dp"
+            android:padding="15dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:digits="0123456789."
+            android:layout_toRightOf="@id/tem_label" />
+    </RelativeLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/hum_layout"
+        android:layout_above="@id/temp_layout"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:id="@+id/hum_label"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/humidity_label"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_medium"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="viewEnd" />
+        <EditText
+            android:id="@+id/humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="280dp"
+            android:padding="15dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:digits="0123456789."
+            android:layout_toRightOf="@id/hum_label" />
+    </RelativeLayout>
+    <TableLayout
+        android:id="@+id/button_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="2"
+        android:layout_marginTop="40dp">
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp">
+            <Button
+                android:id="@+id/btnSet"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/shape"
+                android:onClick="setCondition"
+                android:text="@string/set_button"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="@dimen/font_medium" />
+            <Button
+                android:id="@+id/btnLinkToRegisterScreen"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_height="50dp"
+                android:background="@drawable/shape"
+                android:onClick="cancelSetting"
+                android:text="@string/cancel_button"
+                android:textSize="@dimen/font_medium"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

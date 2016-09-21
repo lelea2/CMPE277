@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IoT_Setter</string>
+    <string name="title">Temperature and Humidity</string>
+    <string name="farm_manager">Farm Manager</string>
+    <string name="farm_maintenance">Farm Maintenance</string>
+    <string name="temperature_label">Temperature (F)</string>
+    <string name="humidity_label">Humidity (%)</string>
+    <string name="set_button">Set</string>
+    <string name="cancel_button">Cancel</string>
+</resources>
