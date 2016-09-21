@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkblue"
+    tools:context="com.example.kdao.iot_farm_broadcastreceiver.FarmMaintenance">
+
+    <TextView android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/farm_maintenance"
+        android:textSize="@dimen/font_large"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:layout_marginBottom="50dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:backgroundTint="@color/red"
+        android:text="@string/fan_on"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/font_large"
+        android:textAllCaps="false"
+        android:padding="20dp"
+        android:layout_margin="30dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:backgroundTint="@color/purple"
+        android:text="@string/sprinkler_on"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/font_large"
+        android:textAllCaps="false"
+        android:padding="20dp"
+        android:layout_margin="30dp" />
+</LinearLayout>

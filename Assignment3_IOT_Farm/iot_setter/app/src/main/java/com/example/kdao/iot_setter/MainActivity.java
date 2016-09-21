@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             int temp = Integer.parseInt(temperature.getText().toString());
             int humidity = Integer.parseInt(temperature.getText().toString());
         } catch (Exception ex) {
-            Toast.makeText(getApplicationContext(),"Please enter valid url",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Please enter valid value",Toast.LENGTH_LONG).show();
         }
     }
 
