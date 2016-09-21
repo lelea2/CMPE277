@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IOT_BroadcastReceiver_Setter</string>
+    <string name="app_name">Farm Manager</string>
     <string name="farm_manager">Farm Manager</string>
     <string name="title">Temperature &amp; Humidity</string>
     <string name="turn_fan">TURN Fan</string>

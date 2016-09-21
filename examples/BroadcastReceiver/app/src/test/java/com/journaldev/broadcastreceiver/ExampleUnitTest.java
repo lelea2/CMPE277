@@ -1,4 +1,4 @@
-package com.example.kdao.farmmanager;
+package com.journaldev.broadcastreceiver;
 
 import org.junit.Test;
 

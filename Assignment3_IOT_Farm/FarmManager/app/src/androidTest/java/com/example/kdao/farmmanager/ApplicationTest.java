@@ -1,4 +1,4 @@
-package com.example.kdao.iot_broadcastreceiver_setter;
+package com.example.kdao.farmmanager;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
