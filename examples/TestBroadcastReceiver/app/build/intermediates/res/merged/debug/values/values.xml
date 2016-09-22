@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Hanumayamma/CiscoAnalytics/BooksAndReferences/CMPE277-03/Android/TestBroadcastReceiver/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">HelloWorld</string>
+    <string name="hello">
+    Choose menu to fireoff a broadcast event.
+    \n\nWatch the logcat for messages from various broadcast receivers 
+    in this process and also in the StandaloneBroadcastReceiver Process.
+    \n\nSome basic debug messages will show here as well.
+    \n\nTap Menu Now!  
+    </string>
+</resources>

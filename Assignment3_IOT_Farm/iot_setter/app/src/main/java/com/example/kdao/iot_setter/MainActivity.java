@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText temperature;
     private EditText humidity;
     private static final String TEMPERATURE = "TEMPERATURE";
-
+    private static final String ACTION_NAME = "com.example.kdao.farmmanager.SET_CONDITION";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +29,10 @@ public class MainActivity extends AppCompatActivity {
         try {
             int temp = Integer.parseInt(temperature.getText().toString());
             int humidity = Integer.parseInt(temperature.getText().toString());
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("text/plain");
-            intent.putExtra(TEMPERATURE, temp);
-            intent.setAction("com.example.kdao.farmmanager");
-            startService(intent);
+            Intent broadcastIntent = new Intent(ACTION_NAME);
+            broadcastIntent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+            broadcastIntent.putExtra(TEMPERATURE, temp);
+            sendBroadcast(broadcastIntent);
         } catch (Exception ex) {
             Toast.makeText(getApplicationContext(),"Please enter valid value",Toast.LENGTH_LONG).show();
         }
