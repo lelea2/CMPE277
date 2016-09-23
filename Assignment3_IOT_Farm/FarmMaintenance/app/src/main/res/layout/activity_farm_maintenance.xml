@@ -22,6 +22,7 @@
         />
 
     <Button
+        android:id="@+id/fan_on"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape"
@@ -35,6 +36,7 @@
         android:layout_margin="30dp" />
 
     <Button
+        android:id="@+id/spinkler_on"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape"
