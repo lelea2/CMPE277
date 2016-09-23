@@ -61,7 +61,7 @@ public class PreferenceView extends AppCompatActivity {
                 out.close();
                 //Book preferences
                 OutputStreamWriter out1 =new OutputStreamWriter(openFileOutput(BOOK_PREFERCENS, MODE_APPEND));
-                String book = name + ", " + author + ". Desc: " + description;
+                String book = "\n" + name + ", " + author + ". Desc: " + description;
                 out1.write(book);
                 out1.close();
             } catch (FileNotFoundException e) {
@@ -76,7 +76,6 @@ public class PreferenceView extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please enter valid info.",Toast.LENGTH_LONG).show();
             return;
         }
-
     }
 
     /**
