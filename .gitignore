@@ -4,3 +4,6 @@ Thumbs.db
 ../build/
 ../.gradle/
 *.zip
+../.idea/misc.xml
+../.idea/**
+**.idea/misc.xml
