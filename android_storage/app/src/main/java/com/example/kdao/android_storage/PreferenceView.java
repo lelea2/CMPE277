@@ -24,6 +24,7 @@ public class PreferenceView extends AppCompatActivity {
     private int counter = 0;
     private SimpleDateFormat s = new SimpleDateFormat("MM/dd/yyyy-hh:mm a");
     public final static String STORE_PREFERENCES= "assignment4_pref.txt";
+    public final static String BOOK_PREFERCENS = "assignment4_books.text"; //File to save book title
     private final static String COUNTER = "COUNTER";
 
     @Override
@@ -49,14 +50,20 @@ public class PreferenceView extends AppCompatActivity {
         if ((name != null) && (author != null) && (description != null)) {
             try {
                 counter += 1;
-                SharedPreferences sharedPreferences=PreferenceManager.getDefaultSharedPreferences(this);
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
                 Editor editor = sharedPreferences.edit();
                 editor.putInt(COUNTER, counter);
                 editor.commit();
+                //Share preference
                 OutputStreamWriter out=new OutputStreamWriter(openFileOutput(STORE_PREFERENCES, MODE_APPEND));
-                String message="\nSaved Preference " + counter + ", " + s.format(new Date());
+                String message = "\nSaved Preference " + counter + ", " + s.format(new Date());
                 out.write(message);
                 out.close();
+                //Book preferences
+                OutputStreamWriter out1 =new OutputStreamWriter(openFileOutput(BOOK_PREFERCENS, MODE_APPEND));
+                String book = name + ", " + author + ". Desc: " + description;
+                out1.write(book);
+                out1.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {

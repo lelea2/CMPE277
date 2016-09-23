@@ -50,7 +50,7 @@ public class SQLiteView extends AppCompatActivity {
             long retValue = dataController.insert(blog_message);
             dataController.close();
             if (retValue != -1) {
-                Toast.makeText(getApplicationContext(), "Message saved successfully",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Message saved with SQLIte successfully",Toast.LENGTH_LONG).show();
                 try {
                     counter += 1;
                     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
