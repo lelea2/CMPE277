@@ -1,3 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Assignment4_ServiceApp</string>
+    <string name="app_name">CMPE277_Assigment5</string>
+    <string name="title">PDF Download Activity</string>
+    <string name="desc">Please provide the list of five SJSU PDFs to download * hardcode of files is file! or you can provide full qualified names...</string>
+    <string name="lable1">PDF1 File Location</string>
+    <string name="lable2">PDF2 File Location</string>
+    <string name="lable3">PDF3 File Location</string>
+    <string name="lable4">PDF4 File Location</string>
+    <string name="lable5">PDF5 File Location</string>
+    <string name="download_btn">Start download</string>
+    <string name="link1">https://www.cisco.com/web/about/ac79/docs/innov/IoE.pdf</string>
+    <string name="link2">http://www.cisco.com/web/about/ac79/docs/innov/IoE_Economy.pdf</string>
+    <string name="link3">http://www.cisco.com/web/strategy/docs/gov/everything-for-cities.pdf</string>
+    <string name="link4">http://www.cisco.com/web/offer/gist_ty2_asset/Cisco_2014_ASR.pdf</string>
+    <string name="link5">http://www.cisco.com/web/offer/emear/38586/images/Presentations/P3.pdf</string>
 </resources>
