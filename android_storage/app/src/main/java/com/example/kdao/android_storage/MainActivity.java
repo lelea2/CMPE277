@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
      * @param v
      */
     public void gotoPreference(View v) {
-        Intent intent = new Intent(MainActivity.this, PreferenceView.class);
+        Intent intent = new Intent(this, PreferenceView.class);
         startActivity(intent);
     }
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
      * @param v
      */
     public void gotoSQLite(View v) {
-        Intent intent = new Intent(MainActivity.this, SQLiteView.class);
+        Intent intent = new Intent(this, SQLiteView.class);
         startActivity(intent);
     }
 
@@ -70,5 +70,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public void closeApp(View v) {
         MainActivity.this.finish();
+        System.exit(0);
     }
 }

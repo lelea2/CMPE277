@@ -65,6 +65,7 @@ public class SQLiteView extends AppCompatActivity {
                 }
             }
             Intent intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         } else {
             Toast.makeText(getApplicationContext(), "Please enter valid info.",Toast.LENGTH_LONG).show();
@@ -73,7 +74,8 @@ public class SQLiteView extends AppCompatActivity {
     }
 
     public void cancelActivity(View v) {
-        Intent intent = new Intent(SQLiteView.this, MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 }
