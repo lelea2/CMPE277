@@ -67,8 +67,9 @@
             android:padding="3dp"
             android:background="@color/white"
             android:textColor="@color/black"
-            android:digits="0123456789."
-            android:inputType="number"
+            android:text="@string/link1"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
             android:layout_toRightOf="@id/tem_label1" />
     </RelativeLayout>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -95,8 +96,9 @@
             android:padding="3dp"
             android:background="@color/white"
             android:textColor="@color/black"
-            android:digits="0123456789."
-            android:inputType="number"
+            android:text="@string/link2"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
             android:layout_toRightOf="@id/tem_label2" />
     </RelativeLayout>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -123,8 +125,9 @@
             android:padding="3dp"
             android:background="@color/white"
             android:textColor="@color/black"
-            android:digits="0123456789."
-            android:inputType="number"
+            android:text="@string/link3"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
             android:layout_toRightOf="@id/tem_label3" />
     </RelativeLayout>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -151,8 +154,9 @@
             android:padding="3dp"
             android:background="@color/white"
             android:textColor="@color/black"
-            android:digits="0123456789."
-            android:inputType="number"
+            android:text="@string/link4"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
             android:layout_toRightOf="@id/tem_label4" />
     </RelativeLayout>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -179,8 +183,9 @@
             android:padding="3dp"
             android:background="@color/white"
             android:textColor="@color/black"
-            android:digits="0123456789."
-            android:inputType="number"
+            android:text="@string/link5"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
             android:layout_toRightOf="@id/tem_label5" />
     </RelativeLayout>
     <Button
@@ -195,14 +200,6 @@
         android:textAllCaps="false"
         android:textColor="@color/colorPrimaryDark"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_gravity="right"
-        android:onClick="downloadFile" />
+        android:layout_marginTop="20dp"
+        android:onClick="downloadFile"/>
 </LinearLayout>
