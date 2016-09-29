@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
     private SensorManager sensorManager;
-    private Sensor sensor;
+//    private Sensor sensor;
     private MediaPlayer mediaPlayer;
     private final static int MAX_VOLUME = 100;
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private void setupSensor() {
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+//        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY), SensorManager.SENSOR_DELAY_NORMAL);
         mediaPlayer = MediaPlayer.create(this, R.raw.applause2); //load media app
         if (sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY) != null){
