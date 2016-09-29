@@ -1,114 +1,79 @@
 package com.example.kdao.assignment4_serviceapp;
 
 import java.net.URL;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import android.app.Service;
+import android.app.IntentService;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.Toast;
-
-import android.os.Binder;
-import android.os.IBinder;
+import android.app.Activity;
+import java.io.*;
+import android.os.*;
+import java.net.URLConnection;
 
 /**
  * Created by kdao on 9/22/16.
  */
-public class MyService extends Service {
-    private int counter = 0;
-    private URL[] urls;
-    private static final int UPDATE_INTERVAL = 1000;
-    private Timer timer = new Timer();
-    private final IBinder binder = new MyBinder();
+public class MyService extends IntentService {
+    private int result = Activity.RESULT_CANCELED;
+    public static final String URL = "URL";
+    public static final String FILE_NAME = "FILE_NAME";
+    public static final String FILE_PATH = "FILE_PATH";
+    public static final String RESULT = "Result";
+    public static final String NOTIFICATION = "DOWNLOAD_FILE";
 
-    public class MyBinder extends Binder {
-        MyService getService() {
-            return MyService.this;
-        }
+    public MyService() {
+        super("MyService");
     }
 
     @Override
-    public IBinder onBind(Intent arg0) {
-        // TODO Auto-generated method stub
-        //return null;
-        return binder;
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        // We want this service to continue running until it is explicitly
-        // stopped, so return sticky.
-        Toast.makeText(this, "Service Started", Toast.LENGTH_LONG).show();
-        Object[] objUrls = (Object[]) intent.getExtras().get("URLs");
-        URL[] urls = new URL[objUrls.length];
-        for (int i=0; i<objUrls.length-1; i++) {
-            urls[i] = (URL) objUrls[i];
+    protected void onHandleIntent(Intent intent) {
+        int count;
+        String urlPath = intent.getStringExtra(URL);
+        String fileName = intent.getStringExtra(FILE_NAME);
+        File output = new File(Environment.getExternalStorageDirectory(), fileName);
+        if (output.exists())    {
+            output.delete();
         }
-        new DoBackgroundTask().execute(urls);
-        return START_STICKY;
-    }
-
-    private void doSomethingRepeatedly() {
-        timer.scheduleAtFixedRate( new TimerTask() {
-            public void run() {
-                Log.d("MyService", String.valueOf(++counter));
+        InputStream stream = null;
+        FileOutputStream fos = null;
+        try {
+            URL url = new URL(urlPath);
+            URLConnection con = url.openConnection();
+            con.connect();
+            stream = new BufferedInputStream(url.openStream());
+            fos = new FileOutputStream(output.getPath());
+            byte data[] = new byte[1024];
+            while ((count = stream.read(data)) != -1) {
+                fos.write(data, 0, count);
+            }
+            fos.flush();
+            fos.close();
+            stream.close();
+            result = Activity.RESULT_OK;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (stream != null) {
                 try {
-                    Thread.sleep(4000);
-                    Log.d("MyService", counter + " Finished");
-
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
+                    stream.close();
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-        }, 0, UPDATE_INTERVAL);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (timer != null){
-            timer.cancel();
-        }
-        Toast.makeText(this, "Service Destroyed", Toast.LENGTH_LONG).show();
-    }
-
-    private int DownloadFile(URL url) {
-        try {
-            //---simulate taking some time to download a file---
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return 100;
-    }
-
-    private class DoBackgroundTask extends AsyncTask<URL, Integer, Long> {
-        protected Long doInBackground(URL... urls) {
-            int count = urls.length;
-            long totalBytesDownloaded = 0;
-            for (int i = 0; i < count; i++) {
-                totalBytesDownloaded += DownloadFile(urls[i]);
-                //---calculate precentage downloaded and
-                // report its progress---
-                publishProgress((int) (((i+1) / (float) count) * 100));
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-            return totalBytesDownloaded;
         }
-
-        protected void onProgressUpdate(Integer... progress) {
-            Log.d("Downloading files", String.valueOf(progress[0]) + "% downloaded");
-            Toast.makeText(getBaseContext(), String.valueOf(progress[0]) + "% downloaded", Toast.LENGTH_LONG).show();
-        }
-
-        protected void onPostExecute(Long result) {
-            Toast.makeText(getBaseContext(), "Downloaded " + result + " bytes", Toast.LENGTH_LONG).show();
-            stopSelf();
-        }
+        broastcastResult(output.getAbsolutePath(), result);
     }
 
+    private void broastcastResult(String outputPath, int result)  {
+        Intent intent = new Intent(NOTIFICATION);
+        intent.putExtra(FILE_PATH, outputPath);
+        intent.putExtra(RESULT, result);
+        sendBroadcast(intent);
+    }
 }
 
