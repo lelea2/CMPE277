@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager;
     private Sensor sensor;
     private MediaPlayer mediaPlayer;
-
+    private final static int MAX_VOLUME = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
+//        System.out.println(">>>> Accuracy: " + accuracy);
+//        float volume = (float)(Math.log(MAX_VOLUME - accuracy)/Math.log(MAX_VOLUME));
+//        mediaPlayer.setVolume(volume, volume);
     }
 }
